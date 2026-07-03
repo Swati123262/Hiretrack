@@ -67,4 +67,4 @@ function AddJob({ onAdd }) {
   )
 }
 
-export default AddJob
+export default Addjob

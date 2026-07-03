@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
-import AddJob from './pages/AddJob'
+import Addjob from './pages/Addjob'
 
 function App() {
   const [theme, setTheme] = useState('light')
@@ -49,7 +49,7 @@ function App() {
         <Navbar theme={theme} setTheme={setTheme} themes={themes} />
         <Routes>
           <Route path="/" element={<Home jobs={jobs} setJobs={setJobs} theme={theme} themes={themes} />} />
-          <Route path="/add" element={<AddJob onAdd={addJob} theme={theme} themes={themes} />} />
+          <Route path="/add" element={<Addjob onAdd={addJob} theme={theme} themes={themes} />} />
         </Routes>
       </div>
     </BrowserRouter>
