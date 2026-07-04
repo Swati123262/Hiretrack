@@ -2,11 +2,9 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
-import AddJob from './pages/Addjob'   // Import name AddJob
+import AddJob from './pages/Addjob'
 
 function App() {
-  const [theme, setTheme] = useState('light')
-
   const [jobs, setJobs] = useState(() => {
     const saved = localStorage.getItem('jobs')
     return saved ? JSON.parse(saved) : []
@@ -18,23 +16,13 @@ function App() {
     localStorage.setItem('jobs', JSON.stringify(updated))
   }
 
-  const themes = {
-    // ... tumhara themes object same rahega
-  }
-
   return (
     <BrowserRouter>
-      <div className={`${themes[theme].bg} min-h-screen`}>
-        <Navbar theme={theme} setTheme={setTheme} themes={themes} />
+      <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-teal-50">
+        <Navbar />
         <Routes>
-          <Route
-            path="/"
-            element={<Home jobs={jobs} setJobs={setJobs} theme={theme} themes={themes} />}
-          />
-          <Route
-            path="/add"
-            element={<AddJob onAdd={addJob} theme={theme} themes={themes} />}
-          />
+          <Route path="/" element={<Home jobs={jobs} setJobs={setJobs} />} />
+          <Route path="/add" element={<AddJob onAdd={addJob} />} />
         </Routes>
       </div>
     </BrowserRouter>
