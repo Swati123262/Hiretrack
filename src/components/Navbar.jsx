@@ -11,7 +11,7 @@ function Navbar() {
       </Link>
       <Link to="/add">
         <button className="bg-white text-indigo-600 px-5 py-2 rounded-full font-bold hover:bg-indigo-50 transition shadow-md text-sm">
-          + Add Job
+          + Add job
         </button>
       </Link>
     </nav>
