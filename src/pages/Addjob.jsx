@@ -81,7 +81,7 @@ function AddJob({ onAdd }) {
           onClick={handleSubmit}
           className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl px-6 py-3 font-bold hover:opacity-90 transition text-lg shadow-md"
         >
-          ✅ Add Job
+          Add Job
         </button>
       </div>
     </div>
